@@ -1,0 +1,45 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+  margin-top: 55px !important;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.shirt-color {
+  width: 2px;
+}
+
+/* the !important are for bootstrap. 
+   It would override the color on hover of the table-row. yes, I'm lazy. */
+   
+.red {
+  background-color: #C00 !important;
+}
+
+.gray {
+  background-color: #CCC !important;
+}
+
+.blue {
+  background-color: #00C !important;
+}
+
+.yellow {
+  background-color: #CC0 !important;
+}

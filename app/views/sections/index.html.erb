@@ -1,0 +1,36 @@
+<h1>Listing sections</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Officers</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sections.each do |section| %>
+    <tr>
+      <td><%= section.name %></td>
+      <td>
+        <% section.officers.each_with_index do |officer, index| %>
+          <%= link_to "#{officer.rank} #{officer.name}", officer_path( officer ) %>
+          <% if index < section.officers.count - 1 %>
+            <br>
+          <% end %>
+        <% end %>
+      </td>
+      <td><%= link_to 'Show', section %></td>
+      <td><%= link_to 'Edit', edit_section_path(section) %></td>
+      <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Section', new_section_path, class: "btn" %>
